@@ -14,7 +14,7 @@ IF '%ERRORLEVEL%' NEQ '0' (
 REM Create a vbs that calls UAC
 :UACPrompt
 	echo Set UAC = CreateObject^("Shell.Application"^) > "%TEMP%\getadmin.vbs"
-	set params = %*:"=""
+	set params = %*:"="
 	echo UAC.ShellExecute "cmd.exe", "/c %~s0 %params%", "", "runas", 1 >> "%TEMP%\getadmin.vbs"
 	
 	"%TEMP%\getadmin.vbs"
