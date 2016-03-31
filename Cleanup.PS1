@@ -148,4 +148,5 @@ Optimize-Volume C
 $EndFree = (Get-Volume -DriveLetter C | Select SizeRemaining | foreach {$_.SizeRemaining})
 $TotalFreed = ($EndFree - $StartFree) / 1MB
 
+Clear-Host
 Write-Host "Total Space Freed:" $TotalFreed "MB"
